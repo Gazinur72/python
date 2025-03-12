@@ -1,32 +1,32 @@
-print("Сложение")
-num1 = float(input("Введите первое число: "))
-num2 = float(input("Введите второе число: "))
-result1 = num1 + num2
-print("Результат сложения:", result1)
+print("Калькулятор")
+num1 = float(input("Введите первое число:"))
+num2 = float(input("Введите второе число:"))
 
-print("Вычитание")
-num1 = float(input("Введите первое число: "))
-num2 = float(input("Введите второе число: "))
-result1 = num1 - num2
-print("Результат:", result1)
+message = '''
+Выберите математическую операцию:
 
-print("Умножение")
-num1 = float(input("Введите первое число: "))
-num2 = float(input("Введите второе число: "))
-result1 = num1 * num2
-print("Результат:", result1)
++ сложение
+- вычитание
+/ деление
+* умножение
+'''
 
-print("Деление")
-try:
-    num1 = float(input("Введите первое число: "))
-    num2 = float(input("Введите второе число: "))
+operation = input(message)
+
+if operation == '+':
+    print('Сложение')
+    result = num1 + num2
+elif operation == '-':
+    print('Вычитание')
+    result = num1 - num2
+elif operation == '/':
+    print('Деление')
     result = num1 / num2
-
-except ValueError:
-    print("Ошибка: введено не число!")
-except ZeroDivisionError:
-    print("Ошибка: Деление на ноль!")
+elif operation == '*':
+    print('Умножение')
+    result = num1 * num2
 else:
-    print(f"Результат: {result}")
-finally:
-    print("Программа завершина.")
+    print('Неизвестная операция')
+
+print("Результат:", result)
+
