@@ -1,39 +1,26 @@
-try:
-    print("Калькулятор")
-    num1 = float(input("Введите первое число:"))
-    num2 = float(input("Введите второе число:"))
-
-    message = '''
-    Выберите математическую операцию:
-    
-    + сложение
-    - вычитание
-    / деление
-    * умножение
-    '''
-
-    operation = input(message)
-
-    if operation == '+':
-        print('Сложение')
-        result = num1 + num2
-    elif operation == '-':
-        print('Вычитание')
-        result = num1 - num2
-    elif operation == '/':
-        print('Деление')
-        result = num1 / num2
-    elif operation == '*':
-        print('Умножение')
-        result = num1 * num2
+def max_number(a, b):
+    if a > b:
+        return a
     else:
-        print('Неизвестная операция')
+        return b
 
-except ValueError:
-    print("Ошибка: введено не число!")
-except ZeroDivisionError:
-    print("Ошибка: Деление на ноль!")
-else:
-    print(f"Результат: {result}")
-finally:
-    print("Программа завершина.")
+
+def empty_function():
+    pass
+
+
+def even_numbers(n):
+    for number in range(0, n + 1):
+        if number % 2 == 0:
+            yield number
+
+
+def test_max_number():
+    assert max_number(10, 5) == 10
+    assert max_number(3, 7) == 7
+    assert max_number(-5, -10) == -5
+    assert max_number(0, 0) == 0
+
+
+test_max_number()
+print("Все тесты пройдены!")
