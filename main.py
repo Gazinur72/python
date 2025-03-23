@@ -15,16 +15,15 @@ def even_numbers(n):
             yield number
 
 
-for num in even_numbers(10):
-    print(num)
-
-
 def test_max_number():
     assert max_number(10, 5) == 10
     assert max_number(3, 7) == 7
     assert max_number(-5, -10) == -5
     assert max_number(0, 0) == 0
 
+for num in even_numbers(10):
+    print(num)
 
 test_max_number()
 print("Все тесты пройдены!")
+
